@@ -1,0 +1,16 @@
+﻿@model IEnumerable<Forum_LocoMVC.Models.Category>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.home = "active";
+}
+
+<div class="m-3">
+    @foreach (var item in Model)
+    {
+        @Html.ActionLink(item.Name, "Index", new { id = item.Name }, new { @class = "list-group-item list-group-item-action" })
+    }
+    @Html.ActionLink("All Products", "Index", new { id = "All" }, new { @class = "list-group-item list-group-item-action" })
+</div>
+
